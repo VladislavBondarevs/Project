@@ -9,11 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.Set;
 
 
 public class AppRunner {
-    private static Logger logger = Logger.getLogger(AppRunner.class.getName());
+    private final static Logger logger = Logger.getLogger(AppRunner.class.getName());
 
     public static void main(String[] args) {
         Square square = new Square();
@@ -41,11 +40,23 @@ public class AppRunner {
         for (Shape shape : shapes) {
             if (minShape.getArea() > shape.getArea()) {
                 minShape = shape;
-            }
-        }
+
+
+
         String className = minShape.getClass().getSimpleName();
         logger.info("Min shape is " + className + " and has area " + minShape.getArea());
 
-    }
+        Shape maxShape = shapes.get(2);
+        for (Shape shape2 : shapes) {
+            if (maxShape.getArea() < shape.getArea()) {
+                maxShape = shape2;
+            }
+        }
+        String className2 = maxShape.getClass().getSimpleName();
+        logger.info("Max shape is " + className2 + " and has area " + maxShape.getArea());
 
+     }
+
+     }
+    }
 }
