@@ -42,21 +42,28 @@ public class AppRunner {
                 minShape = shape;
 
 
+                String className = minShape.getClass().getSimpleName();
+                logger.info("Min shape is " + className + " and has area " + minShape.getArea());
 
-        String className = minShape.getClass().getSimpleName();
-        logger.info("Min shape is " + className + " and has area " + minShape.getArea());
+                Shape maxShape = shapes.get(2);
+                for (Shape shape2 : shapes) {
+                    if (maxShape.getArea() < shape.getArea()) {
+                        maxShape = shape2;
 
-        Shape maxShape = shapes.get(2);
-        for (Shape shape2 : shapes) {
-            if (maxShape.getArea() < shape.getArea()) {
-                maxShape = shape2;
+
+                        String className2 = maxShape.getClass().getSimpleName();
+                        logger.info("Max shape is " + className2 + " and has area " + maxShape.getArea());
+
+
+
+
+
+
+
+
+                    }
+                }
             }
         }
-        String className2 = maxShape.getClass().getSimpleName();
-        logger.info("Max shape is " + className2 + " and has area " + maxShape.getArea());
-
-     }
-
-     }
     }
 }
